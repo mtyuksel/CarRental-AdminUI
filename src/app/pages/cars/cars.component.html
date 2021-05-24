@@ -25,6 +25,7 @@
                                 <th class=" text-center">Daily Price</th>
                                 <th class=" text-center">Edit</th>
                                 <th class=" text-center">Remove</th>
+                                <th class=" text-center">Details</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +42,7 @@
                                 <td class=" td-actions text-center">
                                     <button (click)="editCar(carDetail)" class=" btn btn-link" type="button"
                                         placement="left" ngbTooltip="Edit" container="body">
-                                        <i class="tim-icons icon-pencil" style="color: aqua;"> </i>
+                                        <i class="tim-icons icon-pencil"> </i>
                                     </button>
                                 </td>
                                 <td class=" td-actions text-center">
@@ -50,10 +51,21 @@
                                         <i class="tim-icons icon-simple-remove" style="color: rgb(255, 0, 43);"> </i>
                                     </button>
                                 </td>
+                                <td class=" td-actions text-center">
+                                    <button (click)="showDetails(carDetail)" class=" btn btn-link" type="button"
+                                        placement="left" ngbTooltip="Show Details" container="body">
+                                        <i class="tim-icons icon-zoom-split"></i>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="card-footer">
+                <button class=" btn btn-primary btn-block" (click)="addCar()">
+                    Add New Car
+                </button>
             </div>
         </div>
     </div>
