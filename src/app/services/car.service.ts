@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Car } from '../models/car';
 import { CarDetailDto } from '../models/DTOs/carDetailDto';
 import { ListResponseModel } from '../models/response_models/listResponseModel';
@@ -9,12 +10,15 @@ import { ListResponseModel } from '../models/response_models/listResponseModel';
   providedIn: 'root'
 })
 export class CarService {
-
-  apiUrl = "https://localhost:44370/api/cars/";
+  apiUrl = environment.api_base_url + "cars/";
 
   constructor(private httpClient: HttpClient) { }
 
-  getCars(): Observable<ListResponseModel<Car>> {
+  addCar(car:Car):Observable<any>{
+    return this.httpClient.post(this.apiUrl + "add", car);
+  }
+
+  getCars(): Observable<ListResponseModel<Car>> {    
     return this.httpClient.get<ListResponseModel<Car>>(this.apiUrl + "getall");
   }
 

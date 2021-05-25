@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 export class NotificationService {
   constructor(private toastr: ToastrService) { }
 
-  showInfo(bottomOrTop:string = "top", leftOrCenterOrRight:string = "right", message:string) {
+  showInfo(message:string, bottomOrTop:string = "top", leftOrCenterOrRight:string = "right") {
     this.toastr.info('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span>' + message, '', {
       disableTimeOut: false,
       closeButton: true,
@@ -19,7 +19,7 @@ export class NotificationService {
     });
   }
 
-  showSuccess(bottomOrTop:string = "bottom", leftOrCenterOrRight:string = "right", message:string = "Operation succeded.") {
+  showSuccess(message:string = "Operation succeded.", bottomOrTop:string = "top", leftOrCenterOrRight:string = "right") {
     this.toastr.success('<span class="tim-icons icon-check-2" [data-notify]="icon"></span>' + message, '', {
       disableTimeOut: false,
       closeButton: true,
