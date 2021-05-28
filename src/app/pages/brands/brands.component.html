@@ -1,58 +1,8 @@
 <div class=" row">
-    <div class=" col-md-12">
-        <div class=" card">
-            <div class=" card-header">
-                <h4 class=" card-title">Brands</h4>
-            </div>
-            <div class=" card-body">
-                <div *ngIf="!dataLoaded" class="row justify-content-center">
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-                <div *ngIf="dataLoaded" class="table-responsive">
-                    <table class=" table tablesorter" id="">
-                        <thead class=" text-light">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th class=" text-center">Edit</th>
-                                <th class=" text-center">Remove</th>
-                                <th class=" text-center">Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let brand of brands">
-                                <td>{{brand.id}}</td>
-                                <td>{{brand.name}}</td>
-                                <td class=" td-actions text-center">
-                                    <button (click)="editBrand(brand)" class=" btn btn-link" type="button"
-                                        placement="left" ngbTooltip="Edit" container="body">
-                                        <i class="tim-icons icon-pencil"> </i>
-                                    </button>
-                                </td>
-                                <td class=" td-actions text-center">
-                                    <button (click)="removeBrand(brand)" class=" btn btn-link" type="button"
-                                        placement="left" ngbTooltip="Remove" container="body">
-                                        <i class="tim-icons icon-simple-remove" style="color: rgb(255, 0, 43);"> </i>
-                                    </button>
-                                </td>
-                                <td class=" td-actions text-center">
-                                    <button (click)="showDetails(brand)" class=" btn btn-link" type="button"
-                                        placement="left" ngbTooltip="Show Details" container="body">
-                                        <i class="tim-icons icon-zoom-split"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="card-footer">
-                <button class=" btn btn-primary btn-block" (click)="addBrand()">
-                    Add New Brand
-                </button>
-            </div>
-        </div>
+    <div class=" col-md-6">
+        <app-brand-list></app-brand-list>
+    </div>
+    <div class=" col-md-6">
+        <app-brand-add></app-brand-add>
     </div>
 </div>

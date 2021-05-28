@@ -21,6 +21,8 @@ import { CarDetailComponent } from "src/app/components/car-detail/car-detail.com
 import { CarEditComponent } from "src/app/components/car-edit/car-edit.component";
 import { BrandsComponent } from "src/app/pages/brands/brands.component";
 import { CarsComponent } from "src/app/pages/cars/cars.component";
+import { CarListComponent } from "src/app/components/car-list/car-list.component";
+import { BrandListComponent } from "src/app/components/brand-list/brand-list.component";
 
 @NgModule({
   imports: [
@@ -39,11 +41,13 @@ import { CarsComponent } from "src/app/pages/cars/cars.component";
     TypographyComponent,
     NotificationsComponent,
     MapComponent,
+    BrandsComponent,
     BrandAddComponent,
+    BrandListComponent,
     CarAddComponent,
+    CarListComponent,
     CarDetailComponent,
     CarEditComponent,
-    BrandsComponent,
     CarsComponent
     // RtlComponent
   ],
