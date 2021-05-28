@@ -30,5 +30,16 @@ export class NotificationService {
     });
   }
 
+  showError(message:string = "There is an error occurred!", bottomOrTop:string = "top", leftOrCenterOrRight:string = "center") {
+    this.toastr.error('<span class="tim-icons icon-alert-circle-exc" [data-notify]="icon"></span>' + message, '', {
+      disableTimeOut: false,
+      closeButton: true,
+      enableHtml: true,
+      toastClass: "alert alert-success alert-with-icon",
+      positionClass: 'toast-' + bottomOrTop + '-' + leftOrCenterOrRight,
+      timeOut: 5000
+    });
+  }
+
   ngOnInit() { }
 }
