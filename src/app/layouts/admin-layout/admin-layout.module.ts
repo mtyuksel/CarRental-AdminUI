@@ -15,11 +15,12 @@ import { TypographyComponent } from "../../pages/typography/typography.component
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { BrandAddComponent } from "src/app/pages/brand-add/brand-add.component";
-import { CarAddComponent } from "src/app/pages/car-add/car-add.component";
-import { CarDetailComponent } from "src/app/pages/car-detail/car-detail.component";
-import { CarEditComponent } from "src/app/pages/car-edit/car-edit.component";
+import { BrandAddComponent } from "src/app/components/brand-add/brand-add.component";
+import { CarAddComponent } from "src/app/components/car-add/car-add.component";
+import { CarDetailComponent } from "src/app/components/car-detail/car-detail.component";
+import { CarEditComponent } from "src/app/components/car-edit/car-edit.component";
 import { BrandsComponent } from "src/app/pages/brands/brands.component";
+import { CarsComponent } from "src/app/pages/cars/cars.component";
 
 @NgModule({
   imports: [
@@ -43,9 +44,7 @@ import { BrandsComponent } from "src/app/pages/brands/brands.component";
     CarDetailComponent,
     CarEditComponent,
     BrandsComponent,
-    BrandsComponent,
-    CarDetailComponent,
-    CarEditComponent
+    CarsComponent
     // RtlComponent
   ],
   exports: [FormsModule, ReactiveFormsModule]

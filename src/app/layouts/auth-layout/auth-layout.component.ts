@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { ROUTES } from '../../components/sidebar/sidebar.component';
+import { ROUTES } from '../../components/master_components/sidebar/sidebar.component';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -20,39 +20,39 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router, private modalService: NgbModal) { }
 
-  changeSidebarColor(color){
+  changeSidebarColor(color) {
     var sidebar = document.getElementsByClassName('sidebar')[0];
     var mainPanel = document.getElementsByClassName('main-panel')[0];
 
     this.sidebarColor = color;
 
-    if(sidebar != undefined){
-        sidebar.setAttribute('data',color);
+    if (sidebar != undefined) {
+      sidebar.setAttribute('data', color);
     }
-    if(mainPanel != undefined){
-        mainPanel.setAttribute('data',color);
+    if (mainPanel != undefined) {
+      mainPanel.setAttribute('data', color);
     }
   }
-  changeDashboardColor(color){
+  changeDashboardColor(color) {
     var body = document.getElementsByTagName('body')[0];
     if (body && color === 'white-content') {
-        body.classList.add(color);
+      body.classList.add(color);
     }
-    else if(body.classList.contains('white-content')) {
+    else if (body.classList.contains('white-content')) {
       body.classList.remove('white-content');
     }
   }
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
-   updateColor = () => {
-   var navbar = document.getElementsByClassName('navbar')[0];
-     if (window.innerWidth < 993 && !this.isCollapsed) {
-       navbar.classList.add('bg-white');
-       navbar.classList.remove('navbar-transparent');
-     } else {
-       navbar.classList.remove('bg-white');
-       navbar.classList.add('navbar-transparent');
-     }
-   };
+  updateColor = () => {
+    var navbar = document.getElementsByClassName('navbar')[0];
+    if (window.innerWidth < 993 && !this.isCollapsed) {
+      navbar.classList.add('bg-white');
+      navbar.classList.remove('navbar-transparent');
+    } else {
+      navbar.classList.remove('bg-white');
+      navbar.classList.add('navbar-transparent');
+    }
+  };
   ngOnInit() {
     var navbar = document.getElementsByClassName('navbar')[0];
 
@@ -111,7 +111,7 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
       mainPanel.style.position = "fixed";
     }
 
-    setTimeout(function() {
+    setTimeout(function () {
       toggleButton.classList.add("toggled");
     }, 500);
 
@@ -127,7 +127,7 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
     );
 
     if (window.innerWidth < 991) {
-      setTimeout(function() {
+      setTimeout(function () {
         mainPanel.style.position = "";
       }, 500);
     }
@@ -152,13 +152,13 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
       if ($layer) {
         $layer.remove();
       }
-      setTimeout(function() {
+      setTimeout(function () {
         $toggle.classList.remove("toggled");
       }, 400);
 
       this.mobile_menu_visible = 0;
     } else {
-      setTimeout(function() {
+      setTimeout(function () {
         $toggle.classList.add("toggled");
       }, 430);
 
@@ -173,16 +173,16 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
           .appendChild($layer);
       }
 
-      setTimeout(function() {
+      setTimeout(function () {
         $layer.classList.add("visible");
       }, 100);
 
-      $layer.onclick = function() {
+      $layer.onclick = function () {
         //asign a function
         html.classList.remove("nav-open");
         this.mobile_menu_visible = 0;
         $layer.classList.remove("visible");
-        setTimeout(function() {
+        setTimeout(function () {
           $layer.remove();
           $toggle.classList.remove("toggled");
         }, 400);
@@ -193,7 +193,7 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
     }
   }
   open(content) {
-    this.modalService.open(content, {windowClass: 'modal-search'}).result.then((result) => {
+    this.modalService.open(content, { windowClass: 'modal-search' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -206,7 +206,7 @@ export class AuthLayoutComponent implements OnInit, OnDestroy {
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return  `with: ${reason}`;
+      return `with: ${reason}`;
     }
   }
 }

@@ -15,12 +15,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
-import { CarsComponent } from './pages/cars/cars.component';
-import { ColorsComponent } from './pages/colors/colors.component';
-import { BrandsComponent } from './pages/brands/brands.component';
-import { LocationsComponent } from './pages/locations/locations.component';
-import { CarDetailComponent } from './pages/car-detail/car-detail.component';
-import { CarEditComponent } from './pages/car-edit/car-edit.component';
 
 
 @NgModule({

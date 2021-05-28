@@ -9,7 +9,7 @@ import { TablesComponent } from "../../pages/tables/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 import { CarsComponent } from "src/app/pages/cars/cars.component";
 import { BrandsComponent } from "src/app/pages/brands/brands.component";
-import { BrandAddComponent } from "src/app/pages/brand-add/brand-add.component";
+import { BrandAddComponent } from "src/app/components/brand-add/brand-add.component";
 import { AdminLayoutComponent } from "./admin-layout.component";
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
