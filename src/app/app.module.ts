@@ -1,9 +1,11 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
+
 import { ToastrModule } from 'ngx-toastr';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from "./app.component";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
@@ -25,15 +27,21 @@ import { CarEditComponent } from './pages/car-edit/car-edit.component';
   imports: [
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ComponentsModule,
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatDialogModule
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, CarsComponent, ColorsComponent, BrandsComponent, LocationsComponent, CarDetailComponent, CarEditComponent],
+  declarations: [AppComponent,
+    AdminLayoutComponent,
+    AuthLayoutComponent,
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [FormsModule, ReactiveFormsModule]
 })
-export class AppModule {}
+export class AppModule { }
