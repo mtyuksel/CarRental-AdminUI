@@ -1,1 +1,16 @@
-<form [formGroup] = "carAddForm"></form>
+<div class="col-md-12">
+    <div class="card">
+        <div class="header">
+            <h5 class="title">
+                Add Brand
+            </h5>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="brandAddForm">
+                <div class="form-group">
+                    <input formControlName = "name" class="form-control" type="text" id="name" placeholder="Brand Name">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

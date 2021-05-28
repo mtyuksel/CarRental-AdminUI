@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validator, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-brand-add',
