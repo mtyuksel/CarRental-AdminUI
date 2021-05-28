@@ -9,41 +9,41 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
   {
-    path: "/dashboard",
+    path: "/admin/dashboard",
     title: "Dashboard",
     rtlTitle: "لوحة القيادة",
     icon: "icon-chart-pie-36",
     class: ""
   },
   {
-    path: "/cars",
+    path: "/admin/cars",
     title: "Cars",
     rtlTitle: "لوحة القيادة",
     icon: "icon-delivery-fast",
     class: ""
   },
   {
-    path: "/brands",
+    path: "/admin/brands",
     title: "Brands",
     rtlTitle: "لوحة القيادة",
     icon: "icon-bold",
     class: ""
   },
   {
-    path: "/icons",
+    path: "/admin/icons",
     title: "Icons",
     rtlTitle: "الرموز",
     icon: "icon-atom",
     class: ""
   },
   {
-    path: "/maps",
+    path: "/admin/maps",
     title: "Maps",
     rtlTitle: "خرائط",
     icon: "icon-pin",
     class: "" },
   {
-    path: "/notifications",
+    path: "/admin/notifications",
     title: "Notifications",
     rtlTitle: "إخطارات",
     icon: "icon-bell-55",
@@ -51,28 +51,28 @@ export const ROUTES: RouteInfo[] = [
   },
 
   {
-    path: "/user",
+    path: "/admin/user",
     title: "User Profile",
     rtlTitle: "ملف تعريفي للمستخدم",
     icon: "icon-single-02",
     class: ""
   },
   {
-    path: "/tables",
+    path: "/admin/tables",
     title: "Table List",
     rtlTitle: "قائمة الجدول",
     icon: "icon-puzzle-10",
     class: ""
   },
   {
-    path: "/typography",
+    path: "/admin/typography",
     title: "Typography",
     rtlTitle: "طباعة",
     icon: "icon-align-center",
     class: ""
   },
   {
-    path: "/rtl",
+    path: "/admin/rtl",
     title: "RTL Support",
     rtlTitle: "ار تي ال",
     icon: "icon-world",
