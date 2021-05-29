@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { Injector, NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
@@ -23,6 +23,10 @@ import { BrandsComponent } from "src/app/pages/brands/brands.component";
 import { CarsComponent } from "src/app/pages/cars/cars.component";
 import { CarListComponent } from "src/app/components/car-list/car-list.component";
 import { BrandListComponent } from "src/app/components/brand-list/brand-list.component";
+import { ColorAddComponent } from "src/app/components/color-add/color-add.component";
+import { ColorListComponent } from "src/app/components/color-list/color-list.component";
+
+export let InjectorInstance: Injector;
 
 @NgModule({
   imports: [
@@ -48,9 +52,17 @@ import { BrandListComponent } from "src/app/components/brand-list/brand-list.com
     CarListComponent,
     CarDetailComponent,
     CarEditComponent,
-    CarsComponent
+    CarsComponent,
+    ColorAddComponent,
+    ColorListComponent,
     // RtlComponent
   ],
   exports: [FormsModule, ReactiveFormsModule]
 })
-export class AdminLayoutModule {}
+
+export class AdminLayoutModule {
+  constructor(private injector: Injector) 
+  {
+    InjectorInstance = this.injector;
+  }
+}

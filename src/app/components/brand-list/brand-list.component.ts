@@ -20,15 +20,11 @@ export class BrandListComponent implements OnInit {
   }
 
   getBrands() {
-    this.brandService.getBrands().subscribe(response => {
+    this.brandService.getAll().subscribe(response => {
       this.brands = response.data;
       console.log(response);
       this.dataLoaded = true;
     })
-  }
-
-  addBrand() {
-    this.notificationService.showSuccess("Added.");
   }
 
   editBrand(brand: Brand) {
@@ -37,7 +33,7 @@ export class BrandListComponent implements OnInit {
 
   removeBrand(brand: Brand) {
     if (confirm("Are you use you want to delete this brand: " + brand.id + " / " + brand.name)) {
-      this.brandService.deleteBrand(brand).subscribe(rp => {
+      this.brandService.delete(brand).subscribe(rp => {
         this.notificationService.showInfo("Succesfully deleted!");
         console.log("Deleted!", rp);
       })
