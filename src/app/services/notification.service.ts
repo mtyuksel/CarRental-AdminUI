@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,8 +9,10 @@ import { ToastrService } from 'ngx-toastr';
 export class NotificationService {
   constructor(private toastr: ToastrService) { }
 
-  showInfo(message:string, bottomOrTop:string = "top", leftOrCenterOrRight:string = "right") {
-    this.toastr.info('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span>' + message, '', {
+  ngOnInit() { }
+
+  showInfo(message:string, title:string = "Info", bottomOrTop:string = "top", leftOrCenterOrRight:string = "right") {
+    this.toastr.info('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span>' + message, title, {
       disableTimeOut: false,
       closeButton: true,
       enableHtml: true,
@@ -19,8 +22,8 @@ export class NotificationService {
     });
   }
 
-  showSuccess(message:string = "Operation succeded.", bottomOrTop:string = "top", leftOrCenterOrRight:string = "right") {
-    this.toastr.success('<span class="tim-icons icon-check-2" [data-notify]="icon"></span>' + message, '', {
+  showSuccess(message:string = "Operation succeded.", title:string = "Success", bottomOrTop:string = "bottom", leftOrCenterOrRight:string = "right") {
+    this.toastr.success('<span class="tim-icons icon-check-2" [data-notify]="icon"></span>' + message, title, {
       disableTimeOut: false,
       closeButton: true,
       enableHtml: true,
@@ -30,8 +33,8 @@ export class NotificationService {
     });
   }
 
-  showError(message:string = "There is an error occurred!", bottomOrTop:string = "top", leftOrCenterOrRight:string = "center") {
-    this.toastr.error('<span class="tim-icons icon-alert-circle-exc" [data-notify]="icon"></span>' + message, '', {
+  showError(message:string = "There is an error occurred!", title:string = "An Error Occured!", bottomOrTop:string = "bottom", leftOrCenterOrRight:string = "right") {
+    this.toastr.error('<span class="tim-icons icon-alert-circle-exc" [data-notify]="icon"></span>' + message, title, {
       disableTimeOut: false,
       closeButton: true,
       enableHtml: true,
@@ -40,6 +43,4 @@ export class NotificationService {
       timeOut: 5000
     });
   }
-
-  ngOnInit() { }
 }
