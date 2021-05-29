@@ -1,72 +1,72 @@
 <div class=" row">
-  <div class=" col-md-12">
-      <div class=" card">
-          <div class=" card-header">
-              <h4 class=" card-title">Cars</h4>
-          </div>
-          <div class=" card-body">
-              <div *ngIf="!dataLoaded" class="row justify-content-center">
-                  <div class="spinner-border" role="status">
-                      <span class="visually-hidden">Loading...</span>
-                  </div>
-              </div>
-              <div *ngIf="dataLoaded" class="table-responsive">
-                  <table class=" table tablesorter" id="">
-                      <thead class=" text-light">
-                          <tr>
-                              <th>ID</th>
-                              <th>Brand</th>
-                              <th>Model</th>
-                              <th>Color</th>
-                              <th>Model Year</th>
-                              <th>City</th>
-                              <th>Location</th>
-                              <th>Decription</th>
-                              <th class=" text-center">Daily Price</th>
-                              <th class=" text-center">Edit</th>
-                              <th class=" text-center">Remove</th>
-                              <th class=" text-center">Details</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let carDetail of carDetails">
-                              <td>{{carDetail.id}}</td>
-                              <td>{{carDetail.brand.name}}</td>
-                              <td>{{carDetail.name}}</td>
-                              <td>{{carDetail.color.name}}</td>
-                              <td>{{carDetail.modelYear}}</td>
-                              <td>{{carDetail.location.city.name}}</td>
-                              <td>{{carDetail.location.name}}</td>
-                              <td>{{carDetail.description}}</td>
-                              <td class=" text-center">${{carDetail.dailyPrice}}</td>
-                              <td class=" td-actions text-center">
-                                  <button (click)="editCar(carDetail)" class=" btn btn-link" type="button"
-                                      placement="left" ngbTooltip="Edit" container="body">
-                                      <i class="tim-icons icon-pencil"> </i>
-                                  </button>
-                              </td>
-                              <td class=" td-actions text-center">
-                                  <button (click)="removeCar(carDetail)" class=" btn btn-link" type="button"
-                                      placement="left" ngbTooltip="Remove" container="body">
-                                      <i class="tim-icons icon-simple-remove" style="color: rgb(255, 0, 43);"> </i>
-                                  </button>
-                              </td>
-                              <td class=" td-actions text-center">
-                                  <button (click)="showDetails(carDetail)" class=" btn btn-link" type="button"
-                                      placement="left" ngbTooltip="Show Details" container="body">
-                                      <i class="tim-icons icon-zoom-split"></i>
-                                  </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-          <div class="card-footer">
-              <button class=" btn btn-primary btn-block" (click)="addCar()">
-                  Add New Car
-              </button>
-          </div>
-      </div>
-  </div>
+    <div class=" col-md-12">
+        <div class=" card">
+            <div class=" card-header">
+                <h4 class=" card-title">Cars</h4>
+            </div>
+            <div class=" card-body">
+                <div *ngIf="!dataLoaded" class="row justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div *ngIf="dataLoaded" class="table-responsive">
+                    <table class=" table tablesorter" id="">
+                        <thead class=" text-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Brand</th>
+                                <th>Model</th>
+                                <th>Color</th>
+                                <th>Model Year</th>
+                                <th>City</th>
+                                <th>Location</th>
+                                <th>Decription</th>
+                                <th class=" text-center">Daily Price</th>
+                                <th class=" text-center">Edit</th>
+                                <th class=" text-center">Remove</th>
+                                <th class=" text-center">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let carDetail of carDetails">
+                                <td>{{carDetail.id}}</td>
+                                <td>{{carDetail.brand.name}}</td>
+                                <td>{{carDetail.name}}</td>
+                                <td>{{carDetail.color.name}}</td>
+                                <td>{{carDetail.modelYear}}</td>
+                                <td>{{carDetail.location.city.name}}</td>
+                                <td>{{carDetail.location.name}}</td>
+                                <td>{{carDetail.description}}</td>
+                                <td class=" text-center">${{carDetail.dailyPrice}}</td>
+                                <td class=" td-actions text-center">
+                                    <button (click)="editCar(carDetail)" class=" btn btn-link" type="button"
+                                        placement="left" ngbTooltip="Edit" container="body">
+                                        <i class="tim-icons icon-pencil"> </i>
+                                    </button>
+                                </td>
+                                <td class=" td-actions text-center">
+                                    <button (click)="removeCar(carDetail)" class=" btn btn-link" type="button"
+                                        placement="left" ngbTooltip="Remove" container="body">
+                                        <i class="tim-icons icon-simple-remove" style="color: rgb(255, 0, 43);"> </i>
+                                    </button>
+                                </td>
+                                <td class=" td-actions text-center">
+                                    <button (click)="showDetails(carDetail)" class=" btn btn-link" type="button"
+                                        placement="left" ngbTooltip="Show Details" container="body">
+                                        <i class="tim-icons icon-zoom-split"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class=" btn btn-primary btn-block" (click)="addCar()">
+                    Add New Car
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
