@@ -34,7 +34,7 @@ export class BrandListComponent implements OnInit {
   removeBrand(brand: Brand) {
     if (confirm("Are you use you want to delete this brand: " + brand.id + " / " + brand.name)) {
       this.brandService.delete(brand).subscribe(rp => {
-        this.notificationService.showInfo("Succesfully deleted!");
+        this.notificationService.showInfo(rp.message);
         console.log("Deleted!", rp);
       })
     }

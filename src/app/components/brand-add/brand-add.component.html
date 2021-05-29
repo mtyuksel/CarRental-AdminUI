@@ -1,15 +1,25 @@
-<div class="col-md-12">
-    <form [formGroup]="brandAddForm">
-        <div class="mb-3">
-            <label for="name">Brand Name</label>
-            <div class="form-group">
-                <input formControlName="name" class="form-control" type="text" id="name" placeholder="Brand Name">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class=" card-header">
+                <h4 class=" card-title">Add New Brand</h4>
+            </div>
+            <div class=" card-body">
+                <form [formGroup]="brandAddForm">
+                    <div class="mb-3">
+                        <label for="name">Brand Name</label>
+                        <div class="form-group">
+                            <input formControlName="name" class="form-control" type="text" id="name"
+                                placeholder="Brand Name">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class=" btn btn-primary btn-block" (click)="add()">
+                    Add New Brand
+                </button>
             </div>
         </div>
-    </form>
-    <div class="car-footer">
-        <button class="btn">
-            Test
-        </button>
     </div>
 </div>

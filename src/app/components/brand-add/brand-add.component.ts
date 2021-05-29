@@ -20,21 +20,34 @@ export class BrandAddComponent implements OnInit {
 
   createBrandAddForm() {
     this.brandAddForm = this.formBuilder.group({
-      name: ["", [Validators.required, Validators.minLength(2)]]
+      name: ["", [Validators.required]]
     });
   }
 
-  addBrand() {
-    if (this.brandAddForm.valid) {
-      let brandModel = Object.assign({}, this.brandAddForm.value);
-      console.log(brandModel);
-      this.brandService.add(brandModel).subscribe(r => {
-        console.log(r);
-        this.notificationService.showSuccess("Brand Added.");
-      });
-    } else {
+  add() {
+    if (!this.brandAddForm.valid) {
       this.notificationService.showError("Please fill all required areas.");
+
+      return;
     }
 
+    let brandModel = Object.assign({}, this.brandAddForm.value);
+
+    this.brandService.add(brandModel).subscribe(r => {
+      if (r.success) {
+        this.notificationService.showSuccess(r.message);
+      }
+      else {
+        this.notificationService.showError(r.message);
+      }
+    }, errorResponse => {
+      if (errorResponse?.error?.Errors?.lenght > 0) {
+        for (let i = 0; i < errorResponse.error.Errors.length; i++) {
+          this.notificationService.showError(errorResponse.error.Errors[i].ErrorMessage, "Validation Error!");
+        }
+      } else {
+        this.notificationService.showError();
+      }
+    });
   }
 }
