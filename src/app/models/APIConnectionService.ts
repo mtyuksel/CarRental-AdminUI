@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { InjectorInstance } from "../layouts/admin-layout/admin-layout.module";
 import { ListResponseModel } from "./response_models/listResponseModel";
+import { ResponseModel } from "./response_models/responseModel";
 
 export class APIConnectionService<T>{
     protected apiURL: string;
@@ -12,15 +13,15 @@ export class APIConnectionService<T>{
         this.apiURL = environment.api_base_url + apiPath + "/";
     }
 
-    add(entity: T): Observable<any> {
-        return this.httpClient.post(this.apiURL + "add", entity);
+    add(entity: T): Observable<ResponseModel> {
+        return this.httpClient.post<ResponseModel>(this.apiURL + "add", entity);
     }
 
     getAll(): Observable<ListResponseModel<T>> {
         return this.httpClient.get<ListResponseModel<T>>(this.apiURL + "getall");
     }
 
-    delete(entity: T): Observable<any> {
-        return this.httpClient.post(this.apiURL + "delete", entity);
+    delete(entity: T): Observable<ResponseModel> {
+        return this.httpClient.post<ResponseModel>(this.apiURL + "delete", entity);
     }
 }
